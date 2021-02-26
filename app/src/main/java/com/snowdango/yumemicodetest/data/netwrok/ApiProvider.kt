@@ -1,6 +1,5 @@
 package com.snowdango.yumemicodetest.data.netwrok
 
-import com.google.gson.Gson
 import com.snowdango.yumemicodetest.BuildConfig
 import com.snowdango.yumemicodetest.data.netwrok.githubapi.ContributorInfoApi
 import com.snowdango.yumemicodetest.data.netwrok.githubapi.ContributorsApi
@@ -10,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiProvider {
-    
+
     val contributorsApi by lazy { provideContributorsApi().create(ContributorsApi::class.java) }
     val contributorInfoApi by lazy { provideContributorsApi().create(ContributorInfoApi::class.java) }
 
