@@ -18,7 +18,7 @@ android {
 
         buildTypes{
             release{
-                buildConfigField 'String', 'API_GITHUB_BASE', "\"$project.API_GITHUB_BASE)\""
+                buildConfigField 'String', 'API_GITHUB_BASE', "\"$project.API_GITHUB_BASE\""
                 buildConfigField 'String', 'API_GITHUB_CONTRIBUTOR', "\"$project.API_GITHUB_CONTRIBUTOR\""
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
@@ -79,4 +79,8 @@ dependencies {
 
     //Gson
     implementation "com.google.code.gson:gson:2.8.6"
+
+    //coroutine
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.0'
 }

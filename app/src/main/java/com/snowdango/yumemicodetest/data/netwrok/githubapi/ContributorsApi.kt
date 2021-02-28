@@ -8,5 +8,5 @@ import retrofit2.http.GET
 
 interface ContributorsApi {
     @GET(BuildConfig.API_GITHUB_CONTRIBUTOR)
-    fun getContributor(): Call<ContributorsResponse>
+    fun getContributor(): Call<List<ContributorsResponse>>
 }
