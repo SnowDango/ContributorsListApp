@@ -18,7 +18,7 @@ class UnitTest {
         assertEquals(4, 2 + 2)
     }
 
-    @Ignore("実際に叩くため基本的に使用しない")
+    //@Ignore("実際に叩くため基本的に使用しない")
     @Test
     fun `api called response status code check`() = runBlocking {
         val result = ContributorsRepository.contributorsRequest()
