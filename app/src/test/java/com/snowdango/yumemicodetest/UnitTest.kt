@@ -1,6 +1,7 @@
 package com.snowdango.yumemicodetest
 
 import com.snowdango.yumemicodetest.data.repository.ContributorsRepository
+import com.snowdango.yumemicodetest.data.repository.UserInfoRepository
 import kotlinx.coroutines.runBlocking
 import org.junit.Test
 
@@ -20,11 +21,16 @@ class UnitTest {
 
     @Ignore("実際に叩くため基本的に使用しない")
     @Test
-    fun `api called response status code check`() = runBlocking {
+    fun `contributor api called response status code check`() = runBlocking {
         val result = ContributorsRepository.contributorsRequest()
         assertNotNull(result)
     }
 
-
+    @Ignore("実際に叩くため基本的に使用しない")
+    @Test
+    fun `user info api called response status code check`() = runBlocking {
+        val result = UserInfoRepository.userInfoRequest("SnowDango")
+        assertNotNull(result)
+    }
 
 }
