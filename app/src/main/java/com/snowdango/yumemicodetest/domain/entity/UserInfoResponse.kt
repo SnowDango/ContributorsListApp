@@ -1,6 +1,6 @@
 package com.snowdango.yumemicodetest.domain.entity
 
-data class ContributorInfoResponse(
+data class UserInfoResponse(
         val login: String,
         val id: Int,
         val nodeId: String,
