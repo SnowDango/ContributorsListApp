@@ -77,9 +77,7 @@ class UnitTest {
             )
         )
         val result = UserInfoCreate().getUserInfo("hiedanene")
-        result.also {
-            assert( result is UserInfoCreate.UserInfoCreateResult.Success )
-        }
+        assert(result is UserInfoCreate.UserInfoCreateResult.Success)
     }
 
     @Test
@@ -90,9 +88,7 @@ class UnitTest {
             )
         )
         val result = UserInfoCreate().getUserInfo("hiedanene")
-        result.also {
-            assert( result is UserInfoCreate.UserInfoCreateResult.Failed )
-        }
+        assert(result is UserInfoCreate.UserInfoCreateResult.Failed )
     }
 
     @After
