@@ -8,9 +8,9 @@ import kotlinx.coroutines.withContext
 object UserInfoRepository {
 
     suspend fun userInfoRequest(user: String): UserInfoResponse? {
-        val result = withContext(Dispatchers.Default) { ApiProvider.userInfoApi.getUserInfo(user).execute() }
-        return when(result.code()){
-            200 -> result.body()
+        val response = withContext(Dispatchers.Default) { ApiProvider.userInfoApi.getUserInfo(user).execute() }
+        return when(response.code()){
+            200 -> response.body()
             else -> null
         }
     }

@@ -8,9 +8,9 @@ import kotlinx.coroutines.withContext
 object ContributorsRepository {
 
     suspend fun contributorsRequest(): List<ContributorsResponse>? {
-        val result = withContext(Dispatchers.Default) { ApiProvider.contributorsApi.getContributor().execute() }
-        return when(result.code()){
-            200 -> result.body()
+        val response = withContext(Dispatchers.Default) { ApiProvider.contributorsApi.getContributor().execute() }
+        return when(response.code()){
+            200 -> response.body()
             else -> null
         }
     }
