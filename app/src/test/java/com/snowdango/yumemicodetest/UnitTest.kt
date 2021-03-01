@@ -1,7 +1,5 @@
 package com.snowdango.yumemicodetest
 
-import android.util.Log
-import com.snowdango.yumemicodetest.data.netwrok.githubapi.ContributorsApi
 import com.snowdango.yumemicodetest.data.repository.ContributorsRepository
 import com.snowdango.yumemicodetest.data.repository.UserInfoRepository
 import com.snowdango.yumemicodetest.domain.usecases.ContributorListCreate
@@ -15,9 +13,7 @@ import org.junit.Test
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Ignore
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.net.InetAddress
+
 
 /**
  * Example local unit test, which will execute on the development machine (host).

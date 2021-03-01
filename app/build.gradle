@@ -8,12 +8,6 @@ android {
     buildToolsVersion "30.0.2"
     testBuildType "staging"
 
-    variantFilter { variant ->
-        if (variant.buildType.name.equals('debug')) {
-            variant.setIgnore(true);
-        }
-    }
-
     defaultConfig {
         applicationId "com.snowdango.yumemicodetest"
         minSdkVersion 26
@@ -29,7 +23,7 @@ android {
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
             debug{
-                buildConfigField 'String', 'API_GITHUB_BASE', "\"http:localhost:40302/\""
+                buildConfigField 'String', 'API_GITHUB_BASE', "\"$project.API_GITHUB_BASE\""
                 buildConfigField 'String', 'API_GITHUB_CONTRIBUTOR', "\"$project.API_GITHUB_CONTRIBUTOR\""
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
@@ -39,6 +33,7 @@ android {
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
         }
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {
@@ -57,11 +52,6 @@ android {
     testOptions {
         unitTests{
             returnDefaultValues = true
-            all{
-                if (it.name == 'testDebugUnitTest') {
-                    systemProperty 'debug', 'true'
-                }
-            }
         }
     }
 }
