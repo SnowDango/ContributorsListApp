@@ -51,9 +51,7 @@ class UnitTest {
             )
         )
         val result = ContributorListCreate().getList()
-        result.also {
-            assert(result is ContributorListCreate.ContributorListCreateResult.Success)
-        }
+        assert(result is ContributorListCreate.ContributorListCreateResult.Success)
     }
 
     @Test
@@ -64,9 +62,7 @@ class UnitTest {
             )
         )
         val result = ContributorListCreate().getList()
-        result.also {
-            assert( result is ContributorListCreate.ContributorListCreateResult.Failed)
-        }
+        assert( result is ContributorListCreate.ContributorListCreateResult.Failed)
     }
 
     @Test
@@ -77,9 +73,7 @@ class UnitTest {
             )
         )
         val result = UserInfoCreate().getUserInfo("hiedanene")
-        result.also {
-            assert( result is UserInfoCreate.UserInfoCreateResult.Success )
-        }
+        assert( result is UserInfoCreate.UserInfoCreateResult.Success )
     }
 
     @Test
@@ -90,9 +84,7 @@ class UnitTest {
             )
         )
         val result = UserInfoCreate().getUserInfo("hiedanene")
-        result.also {
-            assert( result is UserInfoCreate.UserInfoCreateResult.Failed )
-        }
+        assert( result is UserInfoCreate.UserInfoCreateResult.Failed )
     }
 
     @After
