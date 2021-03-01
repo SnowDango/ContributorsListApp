@@ -33,7 +33,6 @@ android {
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
         }
-        signingConfig signingConfigs.debug
     }
 
     buildTypes {

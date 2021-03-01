@@ -1,4 +1,4 @@
-package com.snowdango.yumemicodetest
+package com.snowdango.yumemicodetest.mock.server
 
 import java.io.InputStreamReader
 
