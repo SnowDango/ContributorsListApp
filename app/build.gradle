@@ -23,7 +23,7 @@ android {
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }
             debug{
-                buildConfigField 'String', 'API_GITHUB_BASE', "\"$project.API_GITHUB_BASE\""
+                buildConfigField 'String', 'API_GITHUB_BASE', "\"http:localhost:40302/\""
                 buildConfigField 'String', 'API_GITHUB_CONTRIBUTOR', "\"$project.API_GITHUB_CONTRIBUTOR\""
                 buildConfigField 'String', 'API_GITHUB_USER', "\"$project.API_GITHUB_USER\""
             }

@@ -18,6 +18,6 @@ jobs:
     - name: set env
       run: echo "${{ secrets.ENV }}" >> gradle.properties
     - name: Build with Gradle
-      run: ./gradlew assembleDebug
+      run: ./gradlew assembleRelease
     - name: CodeTest
-      run: ./gradlew test
+      run: ./gradlew testStaging
