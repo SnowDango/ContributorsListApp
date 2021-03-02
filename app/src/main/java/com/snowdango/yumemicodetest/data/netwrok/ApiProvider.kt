@@ -1,5 +1,7 @@
 package com.snowdango.yumemicodetest.data.netwrok
 
+import com.google.gson.FieldNamingPolicy
+import com.google.gson.GsonBuilder
 import com.snowdango.yumemicodetest.BuildConfig
 import com.snowdango.yumemicodetest.data.netwrok.githubapi.ContributorsApi
 import com.snowdango.yumemicodetest.data.netwrok.githubapi.UserInfoApi
@@ -16,8 +18,10 @@ object ApiProvider {
     private fun provideContributorsApi() = Retrofit.Builder()
         .baseUrl(BuildConfig.API_GITHUB_BASE)
         .client(provideOkHttpClient(provideLoggingInterceptor()))
-        .addConverterFactory(GsonConverterFactory.create())
-        .build()
+        .addConverterFactory(GsonConverterFactory.create(
+            GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.LOWER_CASE_WITH_UNDERSCORES)
+                .create()
+        )).build()
 
     private fun provideOkHttpClient(interceptor: HttpLoggingInterceptor): OkHttpClient{
         val builder = OkHttpClient.Builder()

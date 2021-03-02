@@ -1,11 +1,6 @@
 package com.snowdango.yumemicodetest.domain.entity
 
-
 data class ContributorsResponse(
-        val response: List<ContributorsData>,
-)
-
-data class ContributorsData(
         val login: String,
         val id: Int,
         val nodeId: String,

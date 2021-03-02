@@ -8,20 +8,9 @@ import com.snowdango.yumemicodetest.mock.server.MockResponseFileReader
 import kotlinx.coroutines.runBlocking
 import okhttp3.mockwebserver.MockResponse
 import okhttp3.mockwebserver.MockWebServer
-import org.junit.After
-import org.junit.Test
+import org.junit.*
 
-import org.junit.Assert.*
-import org.junit.Before
-import org.junit.Ignore
-
-
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class UnitTest {
+class ApiResponseUnitTest {
 
     private val mockWebServer = MockWebServer()
 
@@ -34,14 +23,14 @@ class UnitTest {
     @Test
     fun `contributor api called response status code check`() = runBlocking {
         val result = ContributorsRepository.contributorsRequest()
-        assertNotNull(result)
+        Assert.assertNotNull(result)
     }
 
     @Ignore("実際に叩くため基本的に使用しない")
     @Test
     fun `user info api called response status code check`() = runBlocking {
         val result = UserInfoRepository.userInfoRequest("SnowDango")
-        assertNotNull(result)
+        Assert.assertNotNull(result)
     }
 
     @Test
@@ -92,5 +81,4 @@ class UnitTest {
     fun tearDown(){
         mockWebServer.shutdown()
     }
-
 }
