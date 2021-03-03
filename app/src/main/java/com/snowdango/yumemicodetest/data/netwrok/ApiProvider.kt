@@ -12,8 +12,8 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiProvider {
 
-    val contributorsApi by lazy { provideContributorsApi().create(ContributorsApi::class.java) }
-    val userInfoApi by lazy { provideContributorsApi().create(UserInfoApi::class.java) }
+    val contributorsApi: ContributorsApi by lazy { provideContributorsApi().create(ContributorsApi::class.java) }
+    val userInfoApi: UserInfoApi by lazy { provideContributorsApi().create(UserInfoApi::class.java) }
 
     private fun provideContributorsApi() = Retrofit.Builder()
         .baseUrl(BuildConfig.API_GITHUB_BASE)
