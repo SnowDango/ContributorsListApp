@@ -1,7 +1,7 @@
 package com.snowdango.yumemicodetest
 
-import com.snowdango.yumemicodetest.model.ContributorListModel
-import com.snowdango.yumemicodetest.viewmodel.ContributorListViewModel
+import com.snowdango.yumemicodetest.model.contributors.ContributorListModel
+import com.snowdango.yumemicodetest.viewmodel.contributors.ContributorListViewModel
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.mockk

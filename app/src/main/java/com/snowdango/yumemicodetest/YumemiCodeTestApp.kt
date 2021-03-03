@@ -2,8 +2,8 @@ package com.snowdango.yumemicodetest
 
 import android.app.Application
 import com.snowdango.yumemicodetest.domain.usecases.ContributorListCreate
-import com.snowdango.yumemicodetest.model.ContributorListModel
-import com.snowdango.yumemicodetest.viewmodel.ContributorListViewModel
+import com.snowdango.yumemicodetest.model.contributors.ContributorListModel
+import com.snowdango.yumemicodetest.viewmodel.contributors.ContributorListViewModel
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.viewmodel.dsl.viewModel
 import org.koin.core.context.startKoin

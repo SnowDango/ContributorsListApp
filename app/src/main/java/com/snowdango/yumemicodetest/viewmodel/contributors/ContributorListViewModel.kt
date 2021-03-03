@@ -1,9 +1,9 @@
-package com.snowdango.yumemicodetest.viewmodel
+package com.snowdango.yumemicodetest.viewmodel.contributors
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.snowdango.yumemicodetest.domain.entity.ContributorsResponse
-import com.snowdango.yumemicodetest.model.ContributorListModel
+import com.snowdango.yumemicodetest.model.contributors.ContributorListModel
 import io.reactivex.rxjava3.core.Observable
 import io.reactivex.rxjava3.core.Single
 import kotlinx.coroutines.Dispatchers

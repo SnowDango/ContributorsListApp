@@ -6,10 +6,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        release {
-        }
-    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
     testBuildType "staging"

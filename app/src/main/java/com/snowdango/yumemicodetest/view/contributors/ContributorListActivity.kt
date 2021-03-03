@@ -7,7 +7,7 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.epoxy.EpoxyRecyclerView
 import com.snowdango.yumemicodetest.R
-import com.snowdango.yumemicodetest.viewmodel.ContributorListViewModel
+import com.snowdango.yumemicodetest.viewmodel.contributors.ContributorListViewModel
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 import org.koin.android.viewmodel.ext.android.viewModel

@@ -1,14 +1,13 @@
-package com.snowdango.yumemicodetest
+package com.snowdango.yumemicodetest.model
 
 import com.snowdango.yumemicodetest.domain.usecases.ContributorListCreate
-import com.snowdango.yumemicodetest.model.ContributorListModel
+import com.snowdango.yumemicodetest.model.contributors.ContributorListModel
 import io.mockk.*
 import kotlinx.coroutines.runBlocking
 
 import org.junit.After
 import org.junit.Test
 import org.junit.Before
-import org.junit.runner.RunWith
 
 
 /**
@@ -17,7 +16,7 @@ import org.junit.runner.RunWith
  * See [testing documentation](http://d.android.com/tools/testing).
  */
 
-class ModelUnitTest {
+class ContributorModelUnitTest {
 
     @Before
     fun setUp(){
@@ -25,7 +24,7 @@ class ModelUnitTest {
     }
 
     @Test
-    fun `get success model`(): Unit = runBlocking {
+    fun `get success contributor model`(): Unit = runBlocking {
         val mockListCreate = mockk<ContributorListCreate>(relaxed = true)
         coEvery { mockListCreate.getList() } returns ContributorListCreate.ContributorListCreateResult.Success(listOf())
         val result = ContributorListModel(mockListCreate).getContributorList()
@@ -33,7 +32,7 @@ class ModelUnitTest {
     }
 
     @Test
-    fun `get failed model`(): Unit = runBlocking {
+    fun `get failed contributor model`(): Unit = runBlocking {
         val mockListCreate = mockk<ContributorListCreate>(relaxed = true)
         coEvery { mockListCreate.getList() } returns ContributorListCreate.ContributorListCreateResult.Failed
         val result = ContributorListModel(mockListCreate).getContributorList()

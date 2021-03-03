@@ -1,4 +1,4 @@
-package com.snowdango.yumemicodetest
+package com.snowdango.yumemicodetest.data
 
 import com.snowdango.yumemicodetest.data.repository.ContributorsRepository
 import com.snowdango.yumemicodetest.data.repository.UserInfoRepository
