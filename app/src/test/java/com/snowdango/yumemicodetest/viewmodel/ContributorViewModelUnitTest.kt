@@ -1,5 +1,6 @@
-package com.snowdango.yumemicodetest
+package com.snowdango.yumemicodetest.viewmodel
 
+import com.snowdango.yumemicodetest.domain.entity.ContributorsResponse
 import com.snowdango.yumemicodetest.model.contributors.ContributorListModel
 import com.snowdango.yumemicodetest.viewmodel.contributors.ContributorListViewModel
 import io.mockk.MockKAnnotations
@@ -9,7 +10,7 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-class ViewModelUnitTest {
+class ContributorViewModelUnitTest {
 
     @Before
     fun setUp(){
@@ -21,11 +22,10 @@ class ViewModelUnitTest {
         val mockModel = mockk<ContributorListModel>(relaxed = true)
         coEvery { mockModel.getContributorList() } returns ContributorListModel.Result.Success(listOf())
         val viewModel = ContributorListViewModel(mockModel)
-        viewModel.orderContributorList().subscribe({
-            assert(true)
-        },{
-            assert(false)
-        })
+        viewModel.orderContributorList().test().await().also {
+            it.assertValue { r -> (r is List<ContributorsResponse>) }
+            it.assertComplete()
+        }
     }
 
     @Test
@@ -33,11 +33,10 @@ class ViewModelUnitTest {
         val mockModel = mockk<ContributorListModel>(relaxed = true)
         coEvery { mockModel.getContributorList() } returns ContributorListModel.Result.Failed
         val viewModel = ContributorListViewModel(mockModel)
-        viewModel.orderContributorList().subscribe({
-            assert(false)
-        },{
-            assert(true)
-        })
+        viewModel.orderContributorList().test().await().also {
+            it.assertError { t -> (t is Throwable) }
+            it.assertNotComplete()
+        }
     }
 
     @After
