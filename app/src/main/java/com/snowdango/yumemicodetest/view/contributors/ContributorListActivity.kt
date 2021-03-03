@@ -37,7 +37,7 @@ class ContributorListActivity : AppCompatActivity() {
     @NeedsPermission(Manifest.permission.INTERNET)
     fun showContributors(epoxyController: ContributorsEpoxyController){
         val observer = viewModel.orderContributorList()
-        observer.subscribeOn(AndroidSchedulers.mainThread()).observeOn(Schedulers.newThread()).subscribe(
+        observer.subscribeOn(Schedulers.newThread()).observeOn(AndroidSchedulers.mainThread()).subscribe(
             {
                 epoxyController.setData(it,true)
             },{
