@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YumemiCodeTest</string>
+    <string name="followers">follows: </string>
+    <string name="following">, following: </string>
 </resources>
