@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class UserInfoViewModel(private val model: UserInfoModel): ViewModel() {
 
     fun orderUserInfo(userName: String): Observable<UserInfoResponse>{
-        return Single.create<UserInfoResponse>{
+        return Single.create<UserInfoResponse> {
             viewModelScope.launch(Dispatchers.Default){
                 when(val modelResult = model.getUserInfo(userName)){
                     is UserInfoModel.Result.Success ->
