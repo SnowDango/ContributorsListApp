@@ -1,4 +1,4 @@
-package com.snowdango.yumemicodetest.model
+package com.snowdango.yumemicodetest.model.contributors
 
 import com.snowdango.yumemicodetest.domain.entity.ContributorsResponse
 import com.snowdango.yumemicodetest.domain.usecases.ContributorListCreate
@@ -12,14 +12,12 @@ class ContributorListModel(
         object Failed: Result()
     }
 
-    suspend fun getContributorList(): Result{
+    suspend fun getContributorList(): Result {
         return when(val resultData = contributorListCreate.getList()){
-            is ContributorListCreate.ContributorListCreateResult.Success ->{
+            is ContributorListCreate.ContributorListCreateResult.Success ->
                 Result.Success(resultData.listData)
-            }
-            is ContributorListCreate.ContributorListCreateResult.Failed -> {
+            is ContributorListCreate.ContributorListCreateResult.Failed ->
                 Result.Failed
-            }
         }
     }
 }

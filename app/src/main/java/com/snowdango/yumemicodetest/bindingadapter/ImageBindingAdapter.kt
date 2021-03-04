@@ -8,6 +8,6 @@ object ImageBindingAdapter{
     @JvmStatic
     @BindingAdapter("imageURL")
     fun ImageView.loadImage(url: String?){
-        Picasso.get().load(url).resize(192,192).into(this)
+        if (!url.equals("")) Picasso.get().load(url).resize(192,192).into(this)
     }
 }

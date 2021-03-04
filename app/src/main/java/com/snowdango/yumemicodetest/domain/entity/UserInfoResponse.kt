@@ -22,7 +22,7 @@ data class UserInfoResponse(
         val name: String?,
         val company: String?,
         val blog: String,
-        val location: String,
+        val location: String?,
         val email: String?,
         val hireable: String?,
         val bio: String?,

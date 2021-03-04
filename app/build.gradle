@@ -6,10 +6,6 @@ plugins {
 }
 
 android {
-    signingConfigs {
-        release {
-        }
-    }
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
     testBuildType "staging"
@@ -102,9 +98,9 @@ dependencies {
     implementation 'io.reactivex.rxjava3:rxjava:3.0.6'
 
     // epoxy
-    implementation "com.airbnb.android:epoxy:4.4.1"
-    implementation 'com.airbnb.android:epoxy-databinding:4.4.1'
+    implementation 'com.airbnb.android:epoxy:4.4.1'
     kapt 'com.airbnb.android:epoxy-processor:4.4.1'
+    implementation 'com.airbnb.android:epoxy-databinding:4.4.1'
 
     // picasso
     implementation 'com.squareup.picasso:picasso:2.71828'
